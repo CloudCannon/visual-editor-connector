@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "connector for live editing JavaScript components in the CloudCannon visual editor",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
