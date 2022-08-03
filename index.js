@@ -1,16 +1,18 @@
 let listeners = [];
 
-function onLiveEditorLoad(CloudCannon) {
+async function onLiveEditorLoad(CloudCannon, callback) {
   CloudCannon.enableEvents();
+  const latestValue = await CloudCannon.value();
+  callback(latestValue);
 }
 
 export async function onCloudCannonChanges(callback) {
   if (!window.CloudCannon) {
     document.addEventListener('cloudcannon:load', function (e) {
-      onLiveEditorLoad(e.detail.CloudCannon);
+      onLiveEditorLoad(e.detail.CloudCannon, callback);
     });
   } else {
-    onLiveEditorLoad(window.CloudCannon);
+    onLiveEditorLoad(window.CloudCannon, callback);
   }
 
   const listener = async (e) => {
