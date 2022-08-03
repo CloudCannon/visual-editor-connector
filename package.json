@@ -1,6 +1,6 @@
 {
   "name": "@cloudcannon/visual-editor-connector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "connector for live editing JavaScript components in the CloudCannon visual editor",
   "main": "index.js",
   "type": "module",
